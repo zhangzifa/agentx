@@ -12,10 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "ws": "^0.7.2",
+    "cfork": "~1.2.3",
     "debug": "*",
     "through2": "^0.6.5",
-    "split2": "^0.2.1",
-    "cfork": "*"
+    "split2": "^0.2.1"
   },
   "devDependencies": {
     "expect.js": "*",
