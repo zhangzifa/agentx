@@ -10,7 +10,8 @@ describe('/lib/agent', function () {
       appid: 1,
       server: 'server',
       reconnectDelay: 1,
-      unknown: 'hehe'
+      unknown: 'hehe',
+      logdir: '/tmp'
     };
     var agent = new Agent(config);
     expect(agent.appid).to.be(1);
@@ -21,7 +22,7 @@ describe('/lib/agent', function () {
 
   var wss;
   before(function () {
-    wss = new WebSocketServer({ port: 8989 });
+    wss = new WebSocketServer({ port: 8990 });
     wss.on('connection', function connection(ws) {
       ws.on('message', function incoming(message) {
         console.log('received: %s', message);
@@ -42,11 +43,14 @@ describe('/lib/agent', function () {
 
   it('run should ok', function (done) {
     var agent = new Agent({
-      server: 'localhost:8989',
+      server: 'localhost:8990',
       appid: 1,
-      secret: '2'
+      secret: '2',
+      logdir: '/tmp/',
+      cmddir: '/tmp/'
     });
 
     agent.run();
+    done();
   });
 });

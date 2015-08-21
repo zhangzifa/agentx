@@ -1,18 +1,18 @@
 {
   "name": "agentx",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "agentx is powered by alinode",
   "scripts": {
     "test": "make test"
   },
   "bin": {
-    "agentx": "./startClient.js"
+    "agentx": "./start_client.js"
   },
   "author": "Jackson Tian",
   "license": "MIT",
   "dependencies": {
     "ws": "^0.7.2",
-    "cfork": "~1.2.3",
+    "nounou": "1.0.1",
     "debug": "*",
     "through2": "^0.6.5",
     "split2": "^0.2.1"
